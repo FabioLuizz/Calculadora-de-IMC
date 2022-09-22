@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --background-page: #040924;
+  --background-card: white;
+  --background-button: #02799D;
+  --background-button-hover: #024b61;
+  --background-modal: rgba(0, 0, 0, 0.7);
+  --background-error: #F03E3E;
+
+  --heading-color: #0C3440;
+
+  --label-color: #00453A;
+
+  --background-input: #DCE2E9;
+  --input-border-color: #02799D;
+  --outline-color:
+
+  --background-button: #02799D;
+  --button-text-color: white;
+
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Roboto', sans-serif;
+
+  background-color: var(--background-page); 
+}
+
+.container {
+  height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+.card {
+  background: var(--background-card);
+
+  max-width: 42.8rem;
+  margin-inline: auto;
+
+  font-size: 1.6rem;
+  line-height: 2.0rem;
+
+  padding: 4.2rem 6.4rem 6.4rem 6.4rem;
+
+  border-radius: .6rem;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form h1 {
+  margin-bottom: 3.2rem;
+
+  color: var(--heading-color);
+}
+
+label {
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+
+  display: block;
+
+  margin-bottom: .8rem;
+
+  color: var(--label-color);
+}
+
+input {
+  width: 100%;
+  padding: 1.6rem;
+
+  border-radius: .4rem;
+  border: 2px solid var(--input-border-color);
+
+  background-color: var(--background-input);
+}
+
+.input-wrapper + .input-wrapper {
+  margin-top: 1.6rem;
+}
+
+form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: .8rem;
+
+  width: 100%;
+  margin-top: 3.2rem;
+  padding: 1.6rem;
+
+  border-radius: .4rem;
+  border: none;
+
+  font-size: 1.6rem;
+  line-height: 2.0rem;
+  font-weight: bold;
+
+  background: var(--background-button);
+  color: white;
+
+  transition: background .3s;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: var(--background-button-hover);
+}
+
+
+/* MODAL */
+
+.modal-wrapper.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-wrapper {
+  position: absolute;
+  inset: 0;
+
+  display: grid;
+  place-content: center;
+
+  background-color: var(--background-modal);
+
+  color: var(--heading-color);
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal {
+  position: relative;
+
+}
+
+.modal button {
+  background: none;
+  border: none;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  padding: 1.6rem 1.6rem 0 0;
+
+  cursor: pointer;
+  transition: transform .3s;
+}
+
+.modal button:hover {
+  transform: scale(1.1);
+}
+
+/* Modal Error */
+
+.alert-error.open {
+  visibility: visible;
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+.alert-error {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  text-align: center;
+
+  font-weight: bold;
+
+  padding: .8rem 0;
+  
+  background: var(--background-error);
+  color: white;
+
+  visibility: hidden;
+  opacity: 0;
+
+  transform: translateY(-35px);
+  transition-duration: .6s;
+
+}
